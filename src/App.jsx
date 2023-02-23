@@ -12,7 +12,7 @@ function App() {
       <Header/>
       <main>
       <Navigation/>
-          <Container className = "navigation__container"/>
+          
        <Catalog/>
         
       </main>
