@@ -1,7 +1,7 @@
 import React from "react";
 import './order.css'
 import './goods.css'
-import './count.css'
+
 
 
 
@@ -42,31 +42,7 @@ const Order = () => {
               </div>
             </li>
 
-            <li className="order__item">
-              <img
-                className="order__image"
-                src="img/free_1.jpg"
-                alt="Картошка фри"
-              />
-
-              <div className="order__goods goods">
-                <h3 className="goods__title">Картошка фри</h3>
-
-                <p className="goods__weight">180г</p>
-
-                <p className="goods__price">
-                  245
-                  <span className="currency">₽</span>
-                </p>
-              </div>
-
-              <div className="count">
-                <button className="count__minus">-</button>
-                <p className="count__amount">2</p>
-                <button className="count__plus">+</button>
-              </div>
-            </li>
-
+          
             <li className="order__item">
               <img
                 className="order__image"

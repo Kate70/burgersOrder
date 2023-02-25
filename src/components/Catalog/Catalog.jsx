@@ -2,6 +2,7 @@ import React from 'react'
 import Order from '../Order/Order'
 import Container from '../Container/Container'
 import style from "./Catalog.module.css";
+import CatalogProduct from "../CatalogProduct/CatalogProduct"
 
 
 const goodsList = [
@@ -25,16 +26,15 @@ const Catalog = () => {
 
         <div className = {style.wrap_list}>
           <ul className = {style.list}>
-            <li className = {style.item}>
+            
               {
                 goodsList.map(item =>(
                   <li className={style.item}>
-                    {item.title}
+                    <CatalogProduct title = { item.title}/>
                   </li>
                 ))
-              }
-            
-            </li>        
+              }          
+                  
 
           </ul>
         </div>
