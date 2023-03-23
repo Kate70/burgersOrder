@@ -4,19 +4,21 @@ import Container from "./components/Container/Container";
 import Header from "./components/Header/Header";
 import Catalog from "./components/Catalog/Catalog";
 import Navigation from "./components/Navigation/Navigation";
+import { Provider } from 'react-redux'
+import { store } from "./store/index"
 
 
 function App() {
   return (
     <>
-      <Header/>
+     <Provider store={store}>
+      <Header />
       <main>
-      <Navigation/>
-          
-       <Catalog/>
-        
+        <Navigation />
+        <Catalog />
       </main>
       <footer></footer>
+      </Provider>
     </>
   );
 }

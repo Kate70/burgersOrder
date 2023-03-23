@@ -3,27 +3,27 @@ import Count from '../Count/Count';
 import style from "./OrderGoods.module.css";
 
 
-export const OrderGoods = () => {
+export const OrderGoods = ({item}) => {
     return (
-        <li className="order__item">
+        <li className={style.item}>
             <img
-                className="order__image"
+                className={style.image}
                 src="img/free_1.jpg"
-                alt="Картошка фри"
+            alt={item}
             />
 
-            <div className="order__goods goods">
-                <h3 className="goods__title">Картошка фри</h3>
+            <div className={style.goods}>
+                <h3 className={style.title}>{item}</h3>
 
-                <p className="goods__weight">180г</p>
+                <p className={style.weight}>180г</p>
 
-                <p className="goods__price">
+                <p className={style.price}>
                     245
-                    <span className="currency">₽</span>
+                    <span className={style.currency}>₽</span>
                 </p>
             </div>
 
-           <Count/>
+           <Count count ={10}/>
         </li>
 
     )

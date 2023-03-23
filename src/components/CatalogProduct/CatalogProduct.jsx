@@ -4,7 +4,7 @@ import style from "./CatalogProduct.module.css";
 
 
 const CatalogProduct = (props) => {
-  console.log(props);
+  
   return (
     <article className = {style.product}>
     <img src="img/photo-5.jpg" alt={props.title} className = {style.product__image}/>

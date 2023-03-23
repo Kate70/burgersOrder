@@ -1,45 +1,35 @@
-import classNames from 'classnames'
-import React from 'react'
-import Container from '../Container/Container'
-import style from "./Navigation.module.css"
+import classNames from "classnames";
+import React from "react";
+import { useSelector } from "react-redux";
+import Container from "../Container/Container";
+import style from "./Navigation.module.css";
 
 const Navigation = () => {
+  const { category, activeCategory } = useSelector((state) => state.category);
+  console.log(category);
   return (
-   
     <nav className={style.navigation}>
-      <Container className={style.container}/>
-        <ul className={style.list}>
+      <Container className={style.container} />
+      <ul className={style.list}>
+        {category.map((item, i) => (
           <li className={style.item}>
-            <button className={classNames (style.button, style.button_burger, style.button_active)}>Бургеры</button>
+            <button
+              className={classNames(
+                style.button,
+                activeCategory === i ? style.button_active : ""
+              )}
+              style={{backgroundImage: `url(${item.image})`}}
+              onClick = {() =>{
+                
+              }}
+            >
+              {item.rus}
+            </button>
           </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_snack)}>Закуски</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_hotdog)}>Хот-доги</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames(style.button, style.button_combo)}>Комбо</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_shawarma)}>Шаурма</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_pizza)}>Пицца</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_wok)}>Вок</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_dessert)}>Десерты</button>
-          </li>
-          <li className={style.item}>
-            <button className={classNames (style.button, style.button_sauce)}>Соусы</button>
-          </li>
-        </ul>     
+        ))}
+      </ul>
     </nav>
+  );
+};
 
-  )
-}
-
-export default Navigation
+export default Navigation;
